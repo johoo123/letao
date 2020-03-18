@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    
+}
+.body-bg {
+    background: #222D32;
+}
+
+thead {
+    th {
+        text-align: center;
+    }
+}
+.red {
+    color: red;
+}
+
+.mt-150 {
+    margin-top: 150px;
+}
+.mt-30 {
+    margin-top: 30px;
+}
+
+.table>tbody>tr>td{
+    vertical-align: middle;
+}
+
+#paginator {
+    float: right;
+}
+/*侧边栏*/ 
+.lt-aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    width: 180px;
+    height: 100%;
+    transition: left .5s;
+    h4 {
+        height: 50px;
+        line-height: 50px;
+        background-color: #367FA9;
+        margin: 0;
+        color:#fff;
+        font-size: 24px;
+    }
+    .info {
+        text-align: center;
+        img {
+            width: 100px;
+            border-radius: 50%;
+            margin: 20px 0;
+        }
+        p {
+            color:#fff;
+            font-size: 18px;
+        }
+    }
+    > ul {
+        margin-top: 40px;
+        li {
+            a {
+                display: block;
+                color: #fff;
+                padding-left: 45px;
+                line-height: 40px;
+                font-size: 16px;
+            }
+            .second {
+                display: none;
+                a {
+                    padding-left: 60px;
+                }
+            }
+        }
+        .current {          
+            a {
+                background-color: #1D1F21;
+                border-left: 3px solid #069;
+            }           
+        }
+    }
+}
+
+/*主体*/ 
+.lt-main {
+    padding-left: 180px;
+    height: 1000px;
+    transition: padding .5s;
+    // 头部工具条
+    .topbar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width:100%;
+        height: 50px;
+        background-color: #3C8DBC;
+        padding-left: 180px;
+        transition: padding .5s;
+        a {
+            color: #fff;
+            line-height: 50px;
+            font-size: 26px;
+            padding: 0 10px;
+        }
+    }
+    // 主体
+    .content {
+        // padding-top: 50px;
+        padding: 60px 10px 10px 10px;
+    }
+    
+}
+
+// 侧边栏隐藏显示类名
+body.hidemenu {
+    .lt-aside {
+        left: -180px;
+    }
+    .lt-main {
+        padding-left: 0;
+        .topbar {
+            padding-left: 0;
+        }
+    }
+
+
+}

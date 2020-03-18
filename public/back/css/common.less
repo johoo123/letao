@@ -1,11 +1,129 @@
-.mt_150{
-    margin-top: 150px;
+* {
+  margin: 0;
+  padding: 0;
 }
-.body-bg{
-    background-color: #222D32;
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
 }
-.panel-title{
-    height: 40px;
-    line-height: 40px;
-    font-size: 20px;
+.body-bg {
+  background: #222d32;
+}
+
+thead {
+  th {
+    text-align: center;
+  }
+}
+.red {
+  color: red;
+}
+
+.mt-150 {
+  margin-top: 150px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+
+.table > tbody > tr > td {
+  vertical-align: middle;
+}
+
+#paginator {
+  float: right;
+}
+// 侧边栏
+.lt-aside {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 180px;
+  height: 100%;
+  transition: left .5s;
+  h4 {
+    height: 50px;
+    line-height: 50px;
+    background-color: #367fa9;
+    margin: 0;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 200;
+  }
+  .info {
+    text-align: center;
+    img {
+      width: 80px;
+      border-radius: 50%;
+      margin: 20px 0;
+    }
+    p {
+      color: #fff;
+      font-size: 18px;
+    }
+  }
+  > ul {
+    margin-top: 40px;
+    li {
+      a {
+        display: block;
+        color: #fff;
+        padding-left: 45px;
+        line-height: 40px;
+        font-size: 14px;
+      }
+      .second {
+        display: none;
+        a {
+          padding-left: 60px;
+        }
+      }
+    }
+    .current {
+      a {
+        background-color: #1d1f21;
+        border-left: 3px solid #069;
+      }
+    }
+  }
+}
+.lt-main {
+  padding-left: 180px;
+  height: 1000px;
+  transition: padding .5s;
+  .topbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #3c8dbc;
+    padding-left: 180px;
+    transition: padding .5s;
+    a {
+      color: #fff;
+      line-height: 50px;
+      font-size: 18px;
+      padding: 0 20px;
+    }
+  }
+  //   主体
+  .content{
+      padding:70px 20px 20px 15px;
+  }
+}
+body.hidemenu{
+    .lt-aside{
+        left:-180px;
+    }
+    .lt-main{
+        padding-left: 0;
+        .topbar{
+            padding-left: 0;
+        }
+    }
 }

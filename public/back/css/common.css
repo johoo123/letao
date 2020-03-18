@@ -1,11 +1,115 @@
-.mt_150 {
-  margin-top: 150px;
+* {
+  margin: 0;
+  padding: 0;
+}
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
 }
 .body-bg {
-  background-color: #222D32;
+  background: #222d32;
 }
-.panel-title {
-  height: 40px;
+thead th {
+  text-align: center;
+}
+.red {
+  color: red;
+}
+.mt-150 {
+  margin-top: 150px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+.table > tbody > tr > td {
+  vertical-align: middle;
+}
+#paginator {
+  float: right;
+}
+.lt-aside {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 180px;
+  height: 100%;
+  transition: left 0.5s;
+}
+.lt-aside h4 {
+  height: 50px;
+  line-height: 50px;
+  background-color: #367fa9;
+  margin: 0;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 200;
+}
+.lt-aside .info {
+  text-align: center;
+}
+.lt-aside .info img {
+  width: 80px;
+  border-radius: 50%;
+  margin: 20px 0;
+}
+.lt-aside .info p {
+  color: #fff;
+  font-size: 18px;
+}
+.lt-aside > ul {
+  margin-top: 40px;
+}
+.lt-aside > ul li a {
+  display: block;
+  color: #fff;
+  padding-left: 45px;
   line-height: 40px;
-  font-size: 20px;
+  font-size: 14px;
+}
+.lt-aside > ul li .second {
+  display: none;
+}
+.lt-aside > ul li .second a {
+  padding-left: 60px;
+}
+.lt-aside > ul .current a {
+  background-color: #1d1f21;
+  border-left: 3px solid #069;
+}
+.lt-main {
+  padding-left: 180px;
+  height: 1000px;
+  transition: padding 0.5s;
+}
+.lt-main .topbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #3c8dbc;
+  padding-left: 180px;
+  transition: padding 0.5s;
+}
+.lt-main .topbar a {
+  color: #fff;
+  line-height: 50px;
+  font-size: 18px;
+  padding: 0 20px;
+}
+.lt-main .content {
+  padding: 70px 20px 20px 15px;
+}
+body.hidemenu .lt-aside {
+  left: -180px;
+}
+body.hidemenu .lt-main {
+  padding-left: 0;
+}
+body.hidemenu .lt-main .topbar {
+  padding-left: 0;
 }
