@@ -12,6 +12,9 @@ a:active {
 .body-bg {
   background: #222d32;
 }
+#pagintor {
+  float: right;
+}
 thead th {
   text-align: center;
 }

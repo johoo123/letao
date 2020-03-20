@@ -19,7 +19,7 @@
         <p>超级管理员</p>
       </div>
       <ul>
-        <li class='current'>
+        <li class="current">
           <a href="user.html"
             ><span class="glyphicon glyphicon-user">用户管理</span></a
           >
@@ -29,8 +29,8 @@
             ><span class="glyphicon glyphicon-th-large"></span>分类管理</a
           >
           <ul class="second">
-            <li ><a href="one.html">一级分类</a></li>
-            <li ><a href="two.html">二级分类</a></li>
+            <li><a href="one.html">一级分类</a></li>
+            <li><a href="two.html">二级分类</a></li>
           </ul>
         </li>
         <li>
@@ -58,19 +58,52 @@
           <li><a href="#">后台管理</a></li>
           <li class="active">首页</li>
         </ol>
-        <div class="row">
-          <div class="col-sm-6">
-            <!-- 图表1容器 -->
-            <div id="chart1" style="height:400px;"></div>
-          </div>
-          <div class="col-sm-6">
-            <!-- 图表2容器 -->
-            <div id="chart2" style="height:400px;"></div>
-          </div>
+        <!-- container -->
+        <div class="container">
+          <table class="table table-bordered text-center">
+            <thead>
+              <th>序号</th>
+              <th>用户名</th>
+              <th>手机号</th>
+              <th>状态</th>
+              <th>操作</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>itcast</td>
+                <td>123689123</td>
+                <td>正常</td>
+                <td>
+                  <a href="#" class="btn-danger btn">禁用</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- 分页父级容器 -->
+          <ul id="pagintor" class='pull-right'></ul>
         </div>
       </div>
     </div>
-    <!-- 模态框 -->
+    <!-- 用户模版 -->
+    <script type="text/html" id="tmp">
+      {{each rows v i}}
+      <tr>
+        <td>{{(page-1)*size+i+1}}</td>
+        <td>{{v.username}}</td>
+        <td>{{v.mobile}}</td>
+        <td>{{ v.isDelete == 1? '已启用':'已禁用' }}</td>
+        <td data-id={{v.id}}>
+          {{if v.isDelete==0}}
+          <a href="#" class='btn-success btn button' data-toggle="modal" data-target=".modal-user">启用</a>
+          {{else}}
+          <a href="#" class='btn-danger btn button' data-toggle="modal" data-target=".modal-user">禁用</a>
+          {{/if}}
+        </td>
+      </tr>
+      {{/each}}
+    </script>
+    <!-- 退出模态框 -->
     <div class="modal fade modal-logout" tabindex="-1" role="dialog">
       <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
@@ -92,7 +125,40 @@
             <button type="button" class="btn btn-default" data-dismiss="modal">
               取消
             </button>
-            <button type="button" class="btn btn-primary btn-logout">退出</button>
+            <button type="button" class="btn btn-primary btn-logout">
+              退出
+            </button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- 用户--启用/禁用模态框 -->
+    <div class="modal fade modal-user" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">温馨提示:</h4>
+          </div>
+          <div class="modal-body">
+            <p class="red">你确定要执行此操作吗?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              取消
+            </button>
+            <button type="button" class="btn btn-primary btn-ok">
+              确定
+            </button>
           </div>
         </div>
         <!-- /.modal-content -->
@@ -101,12 +167,13 @@
     </div>
     <!-- /.modal -->
     <!-- 引入js -->
+    <script src='./lib/artTemplate/template-web.js'></script>
     <script src="./lib/jquery/jquery.min.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
-    <!-- <script src="./lib/echarts/echarts.min.js"></script> -->
+    <script src='./lib/bootstrap-paginator/bootstrap-paginator.js'></script>
     <script src="./js/isLogin.js"></script>
     <script src="./js/common.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="./js/user.js"></script>
   </body>
 </html>
