@@ -7,6 +7,7 @@
     <!-- 引入css -->
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="./lib/nprogress/nprogress.css" />
+    <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
     <link rel="stylesheet" href="./css/common.css" />
   </head>
 
@@ -19,7 +20,7 @@
         <p>超级管理员</p>
       </div>
       <ul>
-        <li >
+        <li>
           <a href="user.html"
             ><span class="glyphicon glyphicon-user">用户管理</span></a
           >
@@ -29,11 +30,11 @@
             ><span class="glyphicon glyphicon-th-large"></span>分类管理</a
           >
           <ul class="second">
-            <li ><a href="one.html">一级分类</a></li>
-            <li ><a href="two.html">二级分类</a></li>
+            <li><a href="one.html">一级分类</a></li>
+            <li><a href="two.html">二级分类</a></li>
           </ul>
         </li>
-        <li class='current'>
+        <li class="current">
           <a href="product.html"
             ><span class="glyphicon glyphicon-lock"></span>商品管理</a
           >
@@ -58,15 +59,41 @@
           <li><a href="#">后台管理</a></li>
           <li class="active">首页</li>
         </ol>
-        <div class="row">
-          <div class="col-sm-6">
-            <!-- 图表1容器 -->
-            <div id="chart1" style="height:400px;"></div>
-          </div>
-          <div class="col-sm-6">
-            <!-- 图表2容器 -->
-            <div id="chart2" style="height:400px;"></div>
-          </div>
+        <!-- 商品页静态布局 -->
+        <div>
+          <button
+            class="btn btn-default"
+            data-toggle="modal"
+            data-target=".modal-add"
+          >
+            添加商品
+          </button>
+          <table class="table table-bordered table-hover mt-30 text-center">
+            <thead>
+              <th>序号</th>
+              <th>商品名称</th>
+              <th>商品描述</th>
+              <th>商品库存</th>
+              <th>商品尺寸</th>
+              <th>商品状态</th>
+              <th>操作</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  【莹恋】MIZUNO美津浓V1GA159002乒乓球鞋男鞋女鞋室内综合训练鞋
+                </td>
+                <td>描述123123</td>
+                <td>44</td>
+                <td>35-56</td>
+                <td>已上架</td>
+                <td><div class="btn btn-danger">下架</div></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- 分页 -->
+          <ul id="paginator"></ul>
         </div>
       </div>
     </div>
@@ -92,7 +119,9 @@
             <button type="button" class="btn btn-default" data-dismiss="modal">
               取消
             </button>
-            <button type="button" class="btn btn-primary btn-logout">退出</button>
+            <button type="button" class="btn btn-primary btn-logout">
+              退出
+            </button>
           </div>
         </div>
         <!-- /.modal-content -->
@@ -100,13 +129,168 @@
       <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+    <!-- 添加商品的模态框 -->
+    <div class="modal fade modal-add" tabindex="-1" role="dialog">
+      <div class="modal-dialog " role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">添加商品</h4>
+          </div>
+          <div class="modal-body">
+            <!-- 表单 -->
+            <form id="form1">
+              <div class="form-group">
+                <div class="dropdown">
+                  <!-- 按钮 -->
+                  <button
+                    class="btn btn-default dropdown-toggle"
+                    type="button"
+                    id="dropdownMenu1"
+                    data-toggle="dropdown"
+                  >
+                    <span class="title-text">请选择二级分类</span>
+                    <span class="caret"></span>
+                  </button>
+                  <!-- 列表 -->
+                  <ul
+                    class="dropdown-menu cate-list"
+                    aria-labelledby="dropdownMenu1"
+                  >
+                    <li><a href="#">春哥馆</a></li>
+                    <li><a href="#">春哥馆</a></li>
+                  </ul>
+                  <!-- 隐藏域 存放用户选中数据id  用于提交 -->
+                  <input type="hidden" name="brandId" />
+                </div>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="proName"
+                  class="form-control"
+                  placeholder="请输入产品名称"
+                />
+              </div>
+              <div class="form-group">
+                <textarea name="proDesc"  class="form-control" placeholder="请输入商品描述"></textarea>
+            </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="num"
+                  class="form-control"
+                  placeholder="请输入商品库存"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="size"
+                  class="form-control"
+                  placeholder="请输入商品尺码"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="oldPrice"
+                  class="form-control"
+                  placeholder="请输入商品原价"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="price"
+                  class="form-control"
+                  placeholder="请输入商品现价"
+                />
+              </div>
+              <div class="form-group">
+                <label for="file" class="btn btn-default">上传图像</label>
+                <!-- name指定图片上传时的name属性 -->
+                <!-- data-url指定图片上传时的接口地址 -->
+                <!-- multiple指定多文件上传 -->
+                <input
+                  type="file"
+                  name="pic1"
+                  id="file"
+                  class="hide"
+                  data-url="/product/addProductPic"
+                  multiple
+                />
+              </div>
+              <div class="form-group"> 
+                <!--用于显示上传图片  最多三个 -->
+                <div class="pic-box"></div>                     
+                <input type="hidden" name="picStatus" >
+            </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              取消
+            </button>
+            <!-- 表单form属性 指定 当前表单所属的表单域 -->
+            <button type="submit" form="form1" class="btn btn-primary btn-add">
+              添加
+            </button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal-dialog -->
+    <!-- /.modal -->
+    <!-- 商品渲染的模版 -->
+    <script type="text/html" id="tmp">
+      {{each rows v i}}
+        <tr data-id={{v.id}}>
+          <td>{{(page-1)*size+i+1}}</td>
+          <td>
+            {{v.proName}}
+          </td>
+          <td>{{v.proDesc}}</td>
+          <td>{{v.num}}</td>
+          <td>{{v.size}}</td>
+          <td>{{ v.statu == 1 ? '已上架': '已下架' }}</td>
+          <td>
+            {{if v.statu==1}}
+            <a href="#" class="btn btn-danger">下架</a>
+            {{else}}
+            <a href="#" class="btn btn-danger">上架</a>
+            {{/if}}
+          </td>
+        </tr>
+      {{/each}}
+    </script>
+    <script type="text/html" id="tmp-cate">
+      {{each rows v i}}
+      <li><a href="#" data-id="{{v.id}}">{{v.brandName}}</a></li>
+      {{/each}}
+    </script>
     <!-- 引入js -->
+    <script src="./lib/artTemplate/template-web.js"></script>
     <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+    <script src="./lib/jquery-fileupload/jquery.iframe-transport.js"></script>
+    <script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
     <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src='./lib/bootstrap-validator/js/bootstrapValidator.js'></script>
+    <script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
     <script src="./lib/nprogress/nprogress.js"></script>
     <!-- <script src="./lib/echarts/echarts.min.js"></script> -->
     <script src="./js/isLogin.js"></script>
     <script src="./js/common.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="./js/product.js"></script>
   </body>
 </html>

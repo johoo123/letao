@@ -78,7 +78,6 @@ $(function () {
             picArr.unshift(data.result);
             //显示当前图片,向盒子前面去添加
             $('.pic-box').prepend('<img src="' + data.result.picAddr + '" height="100" >');
-
             //图片大于三张
             if (picArr.length > 3) {
                 // 删除最后一个元素

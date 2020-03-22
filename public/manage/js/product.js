@@ -231,7 +231,7 @@ $(function() {
 
     // 拼接上所有的图片参数
     params += "&picArr=" + JSON.stringify( picArr );
-
+    console.log(params);
     // 通过 ajax 进行添加请求
     $.ajax({
       url: "/product/addProduct",
