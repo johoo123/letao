@@ -1,0 +1,52 @@
+.lt-main {
+  padding: 10px;
+}
+.lt-main .search-box {
+  padding-right: 60px;
+  position: relative;
+}
+.lt-main .search-box .search-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  background-color: #007aff;
+  color: #fff;
+  border: 1px solid #007aff;
+  border-radius: 0px 5px 5px 0px;
+}
+.lt-main .search-box .search-txt {
+  width: 100%;
+  border: 1px solid #007aff;
+  background-color: #fff;
+  height: 33px;
+  border-radius: 5px 0px 0px 5px;
+  font-size: 12px;
+  padding: 10px 15px;
+}
+.lt-main .search-content {
+  padding: 10px 0px;
+  font-size: 12px;
+  color: #ccc;
+}
+.lt-main .search-content .search-title {
+  padding: 5px 0px;
+}
+.lt-main .search-content .search-title a {
+  font-size: 12px;
+  color: #333;
+}
+.lt-main .search-content .search-title a .qingkong {
+  font-size: 16px;
+}
+.lt-main .search-content .search-list {
+  border: 1px dashed red;
+}
+.lt-main .search-content .search-list li {
+  border-bottom: 1px dashed red;
+  padding: 5px;
+  padding-left: 7px;
+}
+.lt-main .search-content .search-list li:nth-last-child(1) {
+  border-bottom: none;
+}

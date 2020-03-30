@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./lib/fa/css/font-awesome.css"> -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <!-- 引入图标 -->
+  </head>
+  <body>
+    <div class="lt_layout">
+      <div class="lt_header">
+        <a href="#" class="mui-pull-left"
+          ><i class="mui-icon mui-icon-home"></i
+        ></a>
+        <h3>乐淘云购</h3>
+        <a href="search.html" class="search mui-pull-right"
+          ><i class="mui-icon mui-icon-search"></i
+        ></a>
+      </div>
+      <div class="lt-main">
+        <div class="mui-scroll-wrapper">
+          <div class="mui-scroll">
+            <!--这里放置真实显示的DOM内容-->
+            <!-- 轮播图 -->
+            <div id="slider" class="mui-slider">
+              <div class="mui-slider-group mui-slider-loop">
+                <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                  <a href="#">
+                    <img src="./images/yuantiao.jpg" />
+                  </a>
+                </div>
+                <!-- 第一张 -->
+                <div class="mui-slider-item">
+                  <a href="#">
+                    <img src="./images/shuijiao.jpg" />
+                  </a>
+                </div>
+                <!-- 第二张 -->
+                <div class="mui-slider-item">
+                  <a href="#">
+                    <img src="./images/muwu.jpg" />
+                  </a>
+                </div>
+                <!-- 第三张 -->
+                <div class="mui-slider-item">
+                  <a href="#">
+                    <img src="./images/cbd.jpg" />
+                  </a>
+                </div>
+                <!-- 第四张 -->
+                <div class="mui-slider-item">
+                  <a href="#">
+                    <img src="./images/yuantiao.jpg" />
+                  </a>
+                </div>
+                <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                  <a href="#">
+                    <img src="./images/shuijiao.jpg" />
+                  </a>
+                </div>
+              </div>
+              <div class="mui-slider-indicator">
+                <div class="mui-indicator mui-active"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+              </div>
+            </div>
+            <!-- 导航区域 -->
+            <ul class="lt-nav mui-clearfix">
+                <li>
+                    <a href="#">
+                        <img src="./images/nav01.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/nav02.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/nav03.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/nav04.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/nav05.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./images/nav06.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+            <!-- 商品模块布局 -->
+            <div class="lt-product">
+                <div class="item">
+                    <a href="#">
+                        <img src="./images/product-01.jpg" alt="">
+                        <p>耐克空军air-force一号休闲篮球鞋运动鞋限量</p>
+                        <div class="price">
+                            <span>666</span>
+                            <span>777</span>
+                        </div>
+                        <button class='mui-btn mui-btn-primary'>立即购买</button>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <img src="./images/product-02.jpg" alt="">
+                        <p class=''>耐克空军air-force一号休闲篮球鞋运动鞋限量</p>
+                        <div class="price">
+                            <span>666</span>
+                            <span>777</span>
+                        </div>
+                        <button class='mui-btn mui-btn-primary'>立即购买</button>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <img src="./images/product-01.jpg" alt="">
+                        <p>耐克空军air-force一号休闲篮球鞋运动鞋限量</p>
+                        <div class="price">
+                            <span>666</span>
+                            <span>777</span>
+                        </div>
+                        <button class='mui-btn mui-btn-primary'>立即购买</button>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#">
+                        <img src="./images/product-02.jpg" alt="">
+                        <p>耐克空军air-force一号休闲篮球鞋运动鞋限量</p>
+                        <div class="price">
+                            <span>666</span>
+                            <span>777</span>
+                        </div>
+                        <button class='mui-btn mui-btn-primary'>立即购买</button>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lt-footer">
+          <ul>
+              <li >
+                <a href="index.html" class='current'>
+                    <span class='mui-icon mui-icon-home'></span>
+                    <span>首页</span>
+                </a>
+              </li>
+              <li>
+                <a href="category.html">
+                    <span class='mui-icon mui-icon-bars'></span>
+                    <span>分类页</span>
+                </a>
+              </li>
+              <li>
+                <a href="car.html">
+                    <span class='mui-icon mui-icon-star'></span>
+                    <span>购物车</span>
+                </a>
+              </li>
+              <li>
+                <a href="user.html">
+                    <span class='mui-icon mui-icon-contact'></span>
+                    <span>用户中心</span>
+                </a>
+              </li>
+          </ul>
+      </div>
+    </div>
+
+    <script src="./lib/mui/js/mui.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/index.js"></script>
+    <script></script>
+  </body>
+</html>

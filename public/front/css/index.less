@@ -1,0 +1,42 @@
+.lt-nav {
+  padding: 10px;
+  li {
+    float: left;
+    width: 33.33%;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+}
+.lt-product {
+  padding: 5px;
+  .item {
+    float: left;
+    width: 48%;
+    margin: 0 1%;
+    display: block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    // 这里设置居中，可以使button也实现居中
+    text-align: center;
+    margin-bottom: 10px;
+    img {
+      width: 100%;
+    }
+    .price {
+      margin-bottom: 20px;
+      span {
+        font-size: 14px;
+        &:nth-child(1) {
+          color: red;
+        }
+        &:nth-child(2) {
+          color: #aaa;
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}
