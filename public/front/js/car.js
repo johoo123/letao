@@ -1,0 +1,13 @@
+$(function(){
+    $.ajax({
+        url:'/cart/queryCart',
+        dataType:'json',
+        success:function(info){
+            console.log(info);
+            if(info.error){
+                location.href='login.html'
+            }
+            $('.mui-table-view').html(template('cartTpl',{list:info}));
+        }
+    })
+})

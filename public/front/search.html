@@ -27,7 +27,7 @@
             class="search-txt"
             placeholder="请输入搜索关键字"
           />
-          <button class="search-btn ">搜索</button>
+          <button class="search-btn" >搜索</button>
         </div>
         <!-- 搜索页面布局完成 -->
         <div class="search-content">
@@ -94,7 +94,7 @@
         <ul class="search-list">
           {{each list v i}}
               <li data-id={{i}}>
-                  <a href="#" >{{v}}</a>
+                  <a href="searchList.html?key={{v}}" >{{v}}</a>
                   <span class='mui-icon mui-icon-closeempty mui-pull-right clear'></span>
               </li>
           {{/each}}
@@ -108,6 +108,5 @@
     <script src="./js/common.js"></script>
     <!-- <script src="./js/index.js"></script> -->
     <script src="./js/search.js"></script>
-    <script></script>
   </body>
 </html>

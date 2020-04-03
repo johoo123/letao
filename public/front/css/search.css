@@ -1,14 +1,12 @@
-.lt-main {
-  padding: 10px;
-}
 .lt-main .search-box {
   padding-right: 60px;
   position: relative;
+  padding: 10px;
 }
 .lt-main .search-box .search-btn {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 10px;
+  top: 10px;
   width: 60px;
   background-color: #007aff;
   color: #fff;
@@ -20,12 +18,13 @@
   border: 1px solid #007aff;
   background-color: #fff;
   height: 33px;
-  border-radius: 5px 0px 0px 5px;
+  border-radius: 5px 5px 5px 5px;
   font-size: 12px;
   padding: 10px 15px;
+  margin: 0;
 }
 .lt-main .search-content {
-  padding: 10px 0px;
+  padding: 10px;
   font-size: 12px;
   color: #ccc;
 }
